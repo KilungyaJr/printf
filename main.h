@@ -41,6 +41,7 @@ int print_string(va_list l, flags_t *f);
 int print_int(va_list l, flags_t *f);
 void print_number(int n);
 int count_digit(int i);
+int print_binary(va_list l, flags_t *f);
 
 /*print_perce function*/
 int print_percent(va_list l, flags_t *f);
@@ -54,6 +55,9 @@ int get_flag(char s, flags_t *f);
 /* write_funcs prototype */
 int _putchar(char c);
 int _puts(char *str);
+
+/*convert function*/
+char *convert(unsigned long int num, int base, int lowercase);
 
 
 #endif /* ifndef MAIN_H */
