@@ -1,0 +1,41 @@
+.TH _printf 3 "9 August 2022" "0.07" "_printf man page"
+.SH NAME
+.B _printf
+.SH SYNOPSIS
+Simplified version of printf
+.SH DESCRIPTION
+_printf is a function that produces output according to format. It takes into account several specifiers: "c", "s", "%", "d" and "i". However, _printf does not reproduce the buffer handling of the C library  printf function.
+.SS Return value
+The function will return the number of characters printed. A value of -1 will be returned if NULL is passed in as an argument without any specifiers.
+.SH OPTIONS
+No options. It does not handle the flag characters, the field width, precision or the length modifiers.
+.SH BUGS
+(Tests ran under Vagrant, Ubuntu 14.04) This function, _printf, does not properly handle several "%" signs when passed as the only argument:
+
+Ex:
+_printf("%%%%% (newline)");
+
+Correct output: %%%
+
+Current output: %% (not on a new line)
+
+_printf("% % % % % (newline)");
+
+Correct output: % % %
+
+Current output: a new line
+
+If "%" does not follow a known identifier, such as "c", "s", "d", or "i". For example, "%" will not print out properly in "%z;1234\n". In the _printf function it prints ";1234\n". The correct output should be "%;1234".
+.SH EXAMPLE
+To print (null)125cHello:
+
+.B #include "main.h"
+
+_printf("%s125%c%s", NULL, 'c', "Hello");
+
+.SH SEE ALSO
+.B For more details about styling, formatting, and documentation please visit:
+https://github.com/holbertonschool/Betty/wiki
+
+.SH AUTHOR
+Silvester Kilungya, Vashty Kuria.
