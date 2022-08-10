@@ -59,5 +59,12 @@ int _puts(char *str);
 /*convert function*/
 char *convert(unsigned long int num, int base, int lowercase);
 
+/*print_uoxX functions*/
+int print_octal(va_list l, flags_t *f);
+int print_hex_big(va_list l, flags_t *f);
+int print_hex(va_list l, flags_t *f);
+int print_unsigned(va_list l, flags_t *f);
+
+
 
 #endif /* ifndef MAIN_H */
