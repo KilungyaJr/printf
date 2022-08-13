@@ -25,9 +25,10 @@ int (*get_print(char s))(va_list, flags_t *)
 		{'o', print_octal},
 		{'S', print_bigS},
 		{'p', print_address},
-		{'r', print_rev}
+		{'r', print_rev},
+		{'R', print_rot13},
 		};
-	int flags = 13;
+	int flags = 14;
 
 	register int i;
 
