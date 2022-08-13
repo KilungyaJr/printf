@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdarg.h>
 
 /**
  * _printf - produces output according to a format
@@ -13,7 +15,7 @@ int _printf(const char *format, ...)
 	int (*pfunc)(va_list, flags_t *);
 	const char *p;
 	va_list arguments;
-	flags_t flags = {0, 0, 0};
+	flags_t flags = {0, 0, 0, 0};
 
 	register int count = 0;
 
