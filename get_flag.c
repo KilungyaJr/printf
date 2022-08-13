@@ -30,7 +30,7 @@ int get_flag(char s, flags_t *f)
 			f->zero = 1;
 			i = 1;
 			break;
-	case '-':
+		case '-':
 			f->minus = 1;
 			i = 1;
 			break;
