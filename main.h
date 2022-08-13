@@ -10,12 +10,14 @@
  * @plus: flag for the '+' character
  * @space: flag for the ' ' character
  * @hash: flag for the '#' character
+ * @zero: flag for the '0' character
  */
 typedef struct flags
 {
 	int plus;
 	int space;
 	int hash;
+	int zero;
 } flags_t;
 
 /**
@@ -32,6 +34,8 @@ typedef struct printHandler
 
 /* _printf function prototype */
 int _printf(const char *format, ...);
+int main(void);
+
 
 /* print function prototypes */
 int print_char(va_list l, flags_t *f);
@@ -67,5 +71,9 @@ int print_unsigned(va_list l, flags_t *f);
 
 /* print aScii function */
 int print_bigS(va_list l, flags_t *f);
+
+
+
+
 
 #endif /* ifndef MAIN_H */
