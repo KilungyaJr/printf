@@ -1,39 +1,47 @@
-#include "holberton.h"
-#include <stdlib.h>
-
+#include "main.h"
 /**
- * print_R - prints a string in rot13
- * @R: string to print
- *
- * Return: number of chars printed
+ * print_rot13 - prints a string using rot13
+ * @l: list of arguments from _printf
+ * @f: pointer to the struct flags that determines
+ * if a flag is passed to _printf
+ * Return: length of the printed string
  */
-int print_R(va_list R)
-{
-	char *str;
-	unsigned int i, j;
-	int count = 0;
-	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-	str = va_arg(R, char *);
-	if (str == NULL)
-		str = "(ahyy)";
-	for (i = 0; str[i]; i++)
+
+int print_rot13(va_list l, flags_t *f)
+{
+	int i, j;
+	char rot13[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char ROT13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	char *s = va_arg(l, char *);
+
+	(void)f;
+	for (j = 0; s[j]; j++)
 	{
-		for (j = 0; in[j]; j++)
+		if (s[j] < 'A' || (s[j] > 'Z' && s[j] < 'a') || s[j] > 'z')
+			_putchar(s[j]);
+		else
 		{
-			if (in[j] == str[i])
+			for (i = 0; i <= 52; i++)
 			{
-				_putchar(out[j]);
-				count++;
-				break;
+				if (s[j] == rot13[i])
+					_putchar(ROT13[i]);
 			}
 		}
-		if (!in[j])
-		{
-			_putchar(str[i]);
-			count++;
-		}
 	}
-	return (count);
+
+	return (j);
+}
+
+/**
+ * print_percent - prints a percent
+ * @l: va_list arguments from _printf
+ * @f: pointer to the struct flags in which we turn the flags on
+ * Return: number of char printed
+ */
+int print_percent(va_list l, flags_t *f)
+{
+	(void)l;
+	(void)f;
+	return (_putchar('%'));
 }
