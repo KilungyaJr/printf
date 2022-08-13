@@ -78,4 +78,7 @@ int print_address(va_list l, flags_t *);
 /* print_string_rev function */
 int print_rev(va_list l, flags_t *f);
 
+/*print_rot13 function*/
+int print_R(va_list R);
+
 #endif /* ifndef MAIN_H */
