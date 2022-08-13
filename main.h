@@ -75,4 +75,7 @@ int print_bigS(va_list l, flags_t *f);
 /* print_p function */
 int print_address(va_list l, flags_t *);
 
+/* print_string_rev function */
+int print_rev(va_list l, flags_t *f);
+
 #endif /* ifndef MAIN_H */
