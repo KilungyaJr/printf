@@ -72,6 +72,6 @@ int print_unsigned(va_list l, flags_t *f);
 int print_bigS(va_list l, flags_t *f);
 
 /* print_p function */
-int print_address(va_list l, flags_t *)
+int print_address(va_list l, flags_t *);
 
 #endif /* ifndef MAIN_H */
