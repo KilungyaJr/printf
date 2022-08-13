@@ -34,7 +34,6 @@ typedef struct printHandler
 
 /* _printf function prototype */
 int _printf(const char *format, ...);
-int main(void);
 
 
 /* print function prototypes */
